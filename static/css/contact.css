@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* MAP */
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 95%;
+  height: 410px;
+  background-color: rgb(249, 245, 237);
+}
+#map2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(249, 245, 237);
+}
+
+.marker {
+  background-image: url('../images/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: red;
+}
+
+/* REST */
+
+.form_gang {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+
+.container_contact {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+}
+
+.contact_col1 {
+  position: relative;
+  padding-right: 15px;
+  height: 410px;
+  margin-bottom: 30px;
+}
+
+input {
+  border: 1px solid #bebebe;
+  display: block;
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #494949;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+.send_contact {
+  color: #fff;
+  width: fit-content;
+  background-color: #f7505e;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+
+textarea {
+  width: 100%;
+  border: 1px solid #bebebe;
+}
+
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+
+
+[type=submit]:not(:disabled):hover {
+  color: #fff;
+  background-color: #f52b3c;
+  border-color: #f51f31;
+  transition-duration: 1s;
+}
+
+
+
+
+.row_detail_content{
+  margin-top: -100px;
+}
+
+
+
+.detail_lineup{
+  width: 100%;
+  height: 100%;
+}

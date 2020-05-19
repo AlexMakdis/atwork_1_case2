@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Contact - Matthias Talloen</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.2.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="../static/css/main.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .marker {
+            background-image: url('mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<section class="sidebar">
+    <div class="wrapper wrapper--footer">
+        <div class="g-fb-container container">
+            <div class="g-fb-row row">
+                <div class="g-fb-col-12 g-fb-col-md-6 widget">
+                    <p>bouwpromoter en algemene aannemer</p>
+                </div>
+                <div class="g-fb-col-12 g-fb-col-md-6 widget_text">
+                    <a href="tel:0495252263">0495 25 22 63</a> - <a
+                        href="mailto:info@matthiastalloen.be">info@matthiastalloen.be</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<header class="hero hero--front-page text-white">
+    <div class="wrapper wrapper--footer">
+        <div class="g-fb-container container">
+            <nav class="g-fb-row row navbar navbar-expand-lg navbar-dark">
+                <div class="g-fb-col-6">
+                    <a class="navbar-brand p-0" href="../index.html">
+                        <img src="https://matthiastalloen.be/wp-content/uploads/2019/03/matthias-talloen-logo-white.svg"
+                            width="186" height="38" alt="Matthias Talloen">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="g-fb-col-6 collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="menu-main-menu" class="navbar-nav ml-auto">
+                        <li id="menu-item-110"
+                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-110">
+                            <a title="Te koop" href="../te-koop/index.html" class="nav-link">Te koop</a>
+                        </li>
+                        <li id="menu-item-109"
+                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-109">
+                            <a title="Te huur" href="https://matthiastalloen.be/te-huur/" class="nav-link">Te
+                                huur</a>
+                        </li>
+                        <li id="menu-item-18"
+                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-18">
+                            <a title="Realisaties" href="https://matthiastalloen.be/realisaties/"
+                                class="nav-link">Realisaties</a></li>
+                        <li id="menu-item-17"
+                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-17">
+                            <a title="Het bedrijf" href="https://matthiastalloen.be/het-bedrijf/" class="nav-link">Het
+                                bedrijf</a></li>
+                        <li id="menu-item-16"
+                            class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-16">
+                            <a title="Contact" href="../contact/index.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="under_header">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item "> <a href="../index.html"> Home </a></li>
+                        <li class="breadcrumb-item active"> Contact</li>
+                    </ol>
+                </nav>
+                <h1 class="text-white h1_contact">Contact</h1>
+            </div>
+        </div>
+    </div>
+
+</header>
+<body>
+    <div class="wrap container">
+        <div class="container_contact">
+            <main>
+                <div class="wrapper wrapper--footer">
+                    <div class="g-fb-container">
+                        <div class="g-fb-row">
+                            <div class="g-fb-col-12 g-fb-col-md-6 contact_col1">
+                                <div id='map'></div>
+
+                                <script>
+                                    L.mapbox.accessToken =
+                                        'pk.eyJ1IjoiYWxleG1ha2RpcyIsImEiOiJjazNzb3F1N2QwNzNhM3BtY2ptbGJjOW92In0.znT94yBzAPQxiPHhy1LrFw';
+                                    var map = L.mapbox.map('map')
+                                        .setView([51.12861858328328, 3.2668310756494723], 13)
+                                        .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+
+                                    var myLayer = L.mapbox.featureLayer().addTo(map);
+
+                                    var geojson = {
+                                        type: 'FeatureCollection',
+                                        features: [{
+                                            type: 'Feature',
+                                            geometry: {
+                                                type: 'Point',
+                                                coordinates: [3.2668310756494723, 51.12861858328328]
+                                            },
+                                            properties: {
+                                                title: 'Matthias <br> Talloen',
+                                                description: '',
+                                                icon: {
+                                                    iconUrl: "../static/images/icon.png",
+                                                    iconSize: [50, 50], // size of the icon
+                                                    iconAnchor: [25,
+                                                        25
+                                                    ], // point of the icon which will correspond to marker's location
+                                                    popupAnchor: [0, -
+                                                        25
+                                                    ], // point from which the popup should open relative to the iconAnchor
+                                                    className: "dot"
+                                                }
+                                            }
+                                        }]
+                                    };
+                                    // Set a custom icon on each marker based on feature properties.
+                                    myLayer.on('layeradd', function (e) {
+                                        var marker = e.layer,
+                                            feature = marker.feature;
+
+                                        marker.setIcon(L.icon(feature.properties.icon));
+                                    });
+
+                                    // Add features to the map.
+                                    myLayer.setGeoJSON(geojson);
+                                </script>
+
+                            </div>
+                            <div class="g-fb-col-12 g-fb-col-md-6 contact_col2">
+                                <div class="g-fb-row">
+                                    <div class="g-fb-col-12">
+                                        <h2>Contacteer ons</h2>
+                                        <p>Laat ons weten hoe we je kunnen bereiken</p>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="g-fb-row form_gang">
+                                    <div class="g-fb-col-6 form-group naam_gutter">
+                                        <label>Naam<span style="color:#ee0000;">*</span></label>
+
+                                        <input class="input" required="" type="text" data-type="text"
+                                            aria-required="true">
+
+                                    </div>
+                                    <div class="g-fb-col-12 g-fb-col-md-6  form-group email_gutter"> <label>E-mailadres
+                                            <span style="color:#ee0000;">*</span></label>
+                                        <input class="input" required="" type="email" value="" data-type="email"
+                                            aria-required="true">
+
+                                    </div>
+                                </div>
+                                <div class="g-fb-row">
+                                    <div class="g-fb-col-12">
+                                        <div class="message_contact">
+                                            <div class="form-group"> <label>Uw bericht <span
+                                                        style="color:#ee0000;">*</span></label>
+                                                <div class=""><textarea value="" rows="7"
+                                                        required="required"></textarea></div>
+                                            </div>
+                                        </div>
+                                        <div class="send_contact">
+                                            <div class="form-group">
+                                                <input class="send_contact" type="submit" value="Verzenden"></div>
+                                        </div> <input class="button_trigger_1" type="hidden" value="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper wrapper--footer">
+                    <div class="g-fb-container">
+                        <div class="g-fb-row">
+                            <div class="g-fb-col-6">
+                                <p>
+                                    <strong>Mathias Talloen</strong>
+                                    <br>
+                                    Hazelstraat 4
+                                    <br>
+                                    8020 Oostkamp
+                                </p>
+                                <p>
+                                    <a href="tel:0495252263">0495 25 22 63</a>
+                                    <br>
+                                    <a href="mailto:info@matthiastalloen.be">info@matthiastalloen.be</a>
+                                </p>
+
+                                <p>
+                                    BE 0896.739.858
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<footer>
+        <div class="wrapper wrapper--footer">
+            <div class="g-fb-container">
+                <div class="g-fb-row">
+                    <div class="logoFoot g-fb-col-12 g-fb-col-md-4">
+                        <img src="https://matthiastalloen.be/wp-content/uploads/2019/04/logo_footer.svg" width="210"
+                            height="61" alt="Matthias Talloen">
+                    </div>
+                    <div class="infoFoot g-fb-col-12 g-fb-col-md-4">
+                        <p>
+                            Hazelaarstraat 4, 8020 Oostkamp<br>
+                            <a href="tel:+32495 25 22 63">0495 25 22 63</a> –
+                            <a href="mailto:info@matthiastalloen.be">info@matthiastalloen.be</a>
+                            <br> BE 0896.739.858
+                        </p>
+                    </div>
+                    <div class="sponFoot g-fb-col-12 g-fb-col-md-4">
+                        <img src="https://matthiastalloen.be/wp-content/uploads/2019/03/bouwunie.svg" width="143"
+                            height="26">
+                        <img src="https://matthiastalloen.be/wp-content/uploads/2019/03/confedereatie-bouw.svg" width="139"
+                            height="40">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="g-fb-container footer_under">
+            <hr class="footer_hr">
+            <div class="g-fb-row footer_under_row">
+    
+                <div class="g-fb-col-12 g-fb-col-md-4 textwidget">
+                    <p>©2019 Bouwwerken Matthias Talloen BVBA</p>
+                </div>
+                <div class="g-fb-col-12 g-fb-col-md-4 law">
+    
+                    <a href="https://matthiastalloen.be/algemene-voorwaarden/">Algemene
+                        voorwaarden</a>
+    
+                    <a href="https://matthiastalloen.be/legale-bepalingen/">Legale
+                        bepalingen</a>
+    
+                    <a href="https://matthiastalloen.be/privacybeleid/">Privacy</a>
+    
+    
+    
+                </div>
+                <div class="g-fb-col-12 g-fb-col-md-4 site-footer">
+                    <p>Deze site werd met trots gemaakt door <a href="https://de-formatie.be">De Formatie</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>
